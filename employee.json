@@ -1,0 +1,83 @@
+[
+  {
+    "Employee 1": {
+      "firstName": "Jimmy",
+      "lastName": "Carter",
+      "employeeId": "E2024001",
+      "birthdate": "1990-05-12",
+      "position": "Software Engineer",
+      "department": "Engineering",
+      "salary": 80000,
+      "employmentDate": "2022-03-15",
+      "employmentStatus": "Permanent"
+    }
+  },
+  {
+    "Employee 2": {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "employeeId": "E2024002",
+      "birthdate": "1985-08-18",
+      "position": "Marketing Specialist",
+      "department": "Marketing",
+      "salary": 70000,
+      "employmentDate": "2022-05-20",
+      "employmentStatus": "Contract"
+    }},
+    {"Employee 3": {
+      "firstName": "Michael",
+      "lastName": "Smith",
+      "employeeId": "E2024003",
+      "birthdate": "1978-12-05",
+      "position": "Financial Analyst",
+      "department": "Finance",
+      "salary": 85000,
+      "employmentDate": "2022-04-10",
+      "employmentStatus": "Retired"
+    }},
+    {"Employee 4": {
+      "firstName": "Emily",
+      "lastName": "Williams",
+      "employeeId": "E2024004",
+      "birthdate": "1982-02-20",
+      "position": "Human Resources Manager",
+      "department": "Human Resources",
+      "salary": 90000,
+      "employmentDate": "2022-06-25",
+      "employmentStatus": "Permanent"
+    }},
+    {"Employee 5": {
+      "firstName": "David",
+      "lastName": "Miller",
+      "employeeId": "E2024005",
+      "birthdate": "1991-07-08",
+      "position": "Quality Assurance Engineer",
+      "department": "Quality Assurance",
+      "salary": 82000,
+      "employmentDate": "2022-03-28",
+      "employmentStatus": "Permanent"
+    }},
+    {"Employee 6": {
+      "firstName": "Samantha",
+      "lastName": "Jones",
+      "employeeId": "E2024006",
+      "birthdate": "1989-10-15",
+      "position": "Customer Support Representative",
+      "department": "Customer Support",
+      "salary": 65000,
+      "employmentDate": "2022-07-12",
+      "employmentStatus": "Permanent"
+    }},
+    {"Employee 7": {
+      "firstName": "Brian",
+      "lastName": "Davis",
+      "employeeId": "E2024007",
+      "birthdate": "1980-04-30",
+      "position": "IT Specialist",
+      "department": "Information Technology",
+      "salary": 78000,
+      "employmentDate": "2022-08-15",
+      "employmentStatus": "Permanent"
+    }
+  }
+]

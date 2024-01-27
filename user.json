@@ -1,0 +1,38 @@
+[
+  {
+    "user1": {
+      "employeeId": "E2024001",
+      "firstName": "Brian",
+      "lastName": "Davis",
+      "email": "bdavis@gmail.com",
+      "password": "kitchen1235"
+    }
+  },
+  {
+    "user2": {
+      "employeeId": "E2024002",
+      "firstName": "Jimmy",
+      "lastName": "Carter",
+      "email": "jCarter@test.com",
+      "password": "market12345"
+    }
+  },
+  {
+    "user3": {
+      "employeeId": "E2024003",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "garden5678"
+    }
+  },
+  {
+    "user4": {
+      "employeeId": "E2024004",
+      "firstName": "David",
+      "lastName": "Smith",
+      "email": "david.smith@example.com",
+      "password": "office9876"
+    }
+  }
+]
