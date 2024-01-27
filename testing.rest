@@ -18,16 +18,16 @@ http://localhost:3000/user/65b4d906e870bbc5cbe79db8
 http://localhost:3000/api-docs
 
 # My Published link that display home page
-https://employeeapi2024.onrender.com
+https://employeerec24.onrender.com
 
 # My Production link that returns all employee
-https://employeeapi2024.onrender.com/employee
+https://employeerec24.onrender.com/employee
 
 # My Production link that returns all employee
-https://employeeapi2024.onrender.com/user
+https://employeerec24.onrender.com/user
 
 # My Production link that returns employee by Id
-https://employeeapi2024.onrender.com/employee/65b3fd387b6b41b033b909cf
+https://employeerec24.onrender.com/employee/65b3fd387b6b41b033b909cf
 
 # My Production link that returns user by Id
-https://employeeapi2024.onrender.com/user/65b4d906e870bbc5cbe79db8
+https://employeerec24.onrender.com/user/65b4d906e870bbc5cbe79db8
