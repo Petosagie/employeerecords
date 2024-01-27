@@ -23,7 +23,7 @@ https://employeerec24.onrender.com
 # My Production link that returns all employee
 https://employeerec24.onrender.com/employee
 
-# My Production link that returns all employee
+# My Production link that returns all user
 https://employeerec24.onrender.com/user
 
 # My Production link that returns employee by Id
