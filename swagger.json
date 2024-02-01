@@ -8,7 +8,7 @@
   "host": "employeerec24.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
