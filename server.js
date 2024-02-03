@@ -1,15 +1,15 @@
-const express = require("express");
+const express = require('express');
 const mongodb = require('./db/database');
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const passport = require("passport");
-const session = require("express-session");
-const GitHubStrategy = require("passport-github2").Strategy;
-const app = express();
-const PORT = process.env.PORT || 3000;
+const passport = require('passport');
+const bodyparser = require('body-parser');
+const session = require('express-session');
+const GithubStrategy = require('passport-github2').Strategy;
+const cors = require('cors');
 
-app
-    .use(bodyParser.json())
+
+const app = express();
+const port = process.env.PORT || 3000;
+app.use(bodyparser.json())
     .use(
         session({
             secret: "secret",
@@ -19,75 +19,74 @@ app
     )
     .use(passport.initialize())
     .use(passport.session())
-    .use((req, res, next) => {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader(
-            "Access-Control-Allow-Headers",
-            "Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization"
-        );
-        res.setHeader(
-            "Access-Control-Allow-Methods",
-            "GET,POST,PUT,DELETE,OPTIONS"
-        );
-        next();
-    })
-    .use(cors({ methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"] }))
-    .use(cors({ origin: "*" }))
-    .use("/", require("./routes"));
+    .use(cors({ methods: ["GET", "POST", "PUT", "DELETE", "UPDATE", "PATCH"] }))
+    .use(cors({ origin: "*" }));
 
 passport.use(
-    new GitHubStrategy(
+    new GithubStrategy(
         {
             clientID: process.env.GITHUB_CLIENT_ID,
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
             callbackURL: process.env.CALLBACK_URL,
         },
-        function (accessToken, refreshToken, profile, done) {
-            return done(null, profile);
+        function (accessToken, refreshToken, profile, cb) {
+            return cb(null, profile);
         }
     )
 );
 
-passport.serializeUser((user, done) => {
-    done(null, user);
+passport.serializeUser(function (user, cb) {
+    cb(null, user);
 });
-passport.deserializeUser((user, done) => {
-    done(null, user);
+passport.deserializeUser(function (obj, cb) {
+    cb(null, obj);
 });
 
-app.get("/", (req, res) => {
-    res.send(
-        req.session.user !== undefined
-            ? `Logged in as ​${req.session.user.displayName}`
-            : "Logged Out"
+
+// Middleware for handling CORS headers
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
     );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
 });
-app.get(
-    "/github/callback",
-    passport.authenticate("github", {
-        failureRedirect: "/api-docs",
-        session: false,
-    }),
+app.use('/', require('./routes'));
+// Middleware for parsing request body as JSON
+app.use(express.json());
+
+// Routes
+app.get('/', (req, res) => (res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : 'Logged Out')));
+app.get("/github/callback", passport.authenticate("github", {
+    failureRedirect: "/api-docs", session: false
+}),
     (req, res) => {
         req.session.user = req.user;
         res.redirect("/");
-    }
-);
+    });
 
-process.on("uncaughtException", (err, origin) => {
-    console.error(`Caught exception: ${err}​\nException origin: ${origin}`);
+
+// Error handling for unhandled exceptions
+process.on('uncaughtException', (err, origin) => {
+    console.error(`Caught exception: ${err}\nException origin: ${origin}`);
 });
 
-process.on("unhandledRejection", (reason, promise) => {
-    console.error(`Unhandled Rejection at:`, promise, "reason:", reason);
+// Error handling for unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    // Handle the error appropriately
 });
 
+// Initialize MongoDB connection
 mongodb.initDb((err) => {
     if (err) {
         console.error(err);
     } else {
-        app.listen(PORT, () => {
-            console.log(`DB Connected.App running on port: ${PORT}`);
+        // Start the server after successful MongoDB connection
+        app.listen(port, () => {
+            console.log(`Connected to DB and Running on port ${port}`);
         });
     }
 });
