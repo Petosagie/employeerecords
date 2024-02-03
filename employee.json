@@ -1,6 +1,5 @@
 [
   {
-    "Employee 1": {
       "firstName": "Jimmy",
       "lastName": "Carter",
       "employeeId": "E2024001",
@@ -11,9 +10,9 @@
       "employmentDate": "2022-03-15",
       "employmentStatus": "Permanent"
     }
-  },
+  ,
   {
-    "Employee 2": {
+   
       "firstName": "Alice",
       "lastName": "Johnson",
       "employeeId": "E2024002",
@@ -23,8 +22,8 @@
       "salary": 70000,
       "employmentDate": "2022-05-20",
       "employmentStatus": "Contract"
-    }},
-    {"Employee 3": {
+    },
+  {
       "firstName": "Michael",
       "lastName": "Smith",
       "employeeId": "E2024003",
@@ -34,8 +33,8 @@
       "salary": 85000,
       "employmentDate": "2022-04-10",
       "employmentStatus": "Retired"
-    }},
-    {"Employee 4": {
+    },
+    {
       "firstName": "Emily",
       "lastName": "Williams",
       "employeeId": "E2024004",
@@ -45,8 +44,8 @@
       "salary": 90000,
       "employmentDate": "2022-06-25",
       "employmentStatus": "Permanent"
-    }},
-    {"Employee 5": {
+    },
+    {
       "firstName": "David",
       "lastName": "Miller",
       "employeeId": "E2024005",
@@ -56,8 +55,8 @@
       "salary": 82000,
       "employmentDate": "2022-03-28",
       "employmentStatus": "Permanent"
-    }},
-    {"Employee 6": {
+    },
+   {
       "firstName": "Samantha",
       "lastName": "Jones",
       "employeeId": "E2024006",
@@ -67,8 +66,8 @@
       "salary": 65000,
       "employmentDate": "2022-07-12",
       "employmentStatus": "Permanent"
-    }},
-    {"Employee 7": {
+    },
+    {
       "firstName": "Brian",
       "lastName": "Davis",
       "employeeId": "E2024007",
@@ -79,5 +78,5 @@
       "employmentDate": "2022-08-15",
       "employmentStatus": "Permanent"
     }
-  }
+  
 ]
